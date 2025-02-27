@@ -1,14 +1,7 @@
-package editordiagramas.Vista;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-
-/**
- *
- * @author Pablo y Marcos 
- */
 
 public class Diagram 
 		extends JPanel 
@@ -42,17 +35,16 @@ public class Diagram
 	}
 	
 	public int getNClasses(){
-		return 0;
+		//Devuelve el número de clases
 	}
 	
 	public int getNAssociations(){
-		return 0;
+		//Devuelve el numero de asociaciones
 	}
 
-	/*public void paint(Graphics g) {
+	public void paint(Graphics g) {
 		//Dibuja el diagrama de clases
 	}
-        **/
 	
 	/********************************************/
 	/** MÈtodos de MouseListener               **/

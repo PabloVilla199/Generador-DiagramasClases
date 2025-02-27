@@ -1,13 +1,6 @@
-package editordiagramas.Vista;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
-/**
- *
- * @author Pablo y Marcos 
- */
 
 public class Window implements ActionListener {
 
