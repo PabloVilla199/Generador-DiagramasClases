@@ -23,11 +23,11 @@ public class Window implements ActionListener {
 	
 	public Component createComponents() {
 		//creamos el boton de añadir clases y lo ponemos en el panel
-		JButton button = new JButton("Add Class");
-		button.setMnemonic(KeyEvent.VK_I);
-		button.addActionListener(this);
- 		setGridProperties(0,0,1,1,0,0,GridBagConstraints.NONE);
-	        panel.add(button, c);
+		button = new JButton("Add Class");
+        button.setMnemonic(KeyEvent.VK_I);
+        button.addActionListener(this);
+        setGridProperties(0,0,1,1,0,0,GridBagConstraints.NONE);
+        panel.add(button, c);
 
 		//creamos el diagrama y lo ponemos en el panel
 		diagram = new Diagram(this);
@@ -69,6 +69,6 @@ public class Window implements ActionListener {
 		labelNClasses.setText("Classes: " + d.getNClasses());
 	}
 	public void updateNAssociations(Diagram d){
-		labelNAssociations.setText("Associations: " + diagram.getNAssociations());
-	}
+        labelNAssociations.setText("Associations: " + d.getNAssociations());
+    }
 }

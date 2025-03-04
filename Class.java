@@ -15,28 +15,22 @@ public class Class {
 		this.y = y;
 		this.name = name;
 	}
-	
-	public void draw(Graphics g){
-		//Dibuja la clase
-		Graphics2D g2 = (Graphics2D)g;
-		
-		if (selected) {
-            g2.setColor(Color.cyan);
-        } else {
-            g2.setColor(Color.white);
-        }
+	public void draw(Graphics g) {
+        draw(g, selected ? Color.cyan : Color.white);
+    }
+    
+    public void draw(Graphics g, Color fillColor) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(fillColor);
         g2.fillRect(x, y, width, height);
         
-        // Borde del rectángulo
         g2.setColor(Color.black);
         g2.drawRect(x, y, width, height);
         
-        // División en tres secciones
         int sectionHeight = height / 3;
         g2.drawLine(x, y + sectionHeight, x + width, y + sectionHeight);
         g2.drawLine(x, y + 2 * sectionHeight, x + width, y + 2 * sectionHeight);
         
-        // Textos: nombre, "atributos" y "métodos"
         g2.drawString(name, x + 5, y + sectionHeight - 5);
         g2.drawString("atributos", x + 5, y + sectionHeight * 2 - 5);
         g2.drawString("métodos", x + 5, y + height - 5);
@@ -47,6 +41,22 @@ public class Class {
     public int getY() { return y; }
     public int getWidth() { return width; }
     public int getHeight() { return height; }
-	//Otros metodos	
-	// …
+	public String getName() { return name; }
+    
+    public void setPosition(int newX, int newY) {
+        x = newX;
+        y = newY;
+    }
+    
+    public void setSelected(boolean sel) {
+        selected = sel;
+    }
+    
+    public boolean isSelected() {
+        return selected;
+    }
+    
+    public boolean containsPoint(int px, int py) {
+        return (px >= x && px <= x + width && py >= y && py <= y + height);
+    }
 }
